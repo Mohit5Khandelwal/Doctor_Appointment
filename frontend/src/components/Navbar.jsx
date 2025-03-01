@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import { assets } from '../assets/assets_frontend/assets';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
     const naviagte = useNavigate();
     const [token, setToken] = useState(true);
     const [showMenu, setShowMenu] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+
 
     return (
         <div className='flex items-center justify-between text-sm py-4 mb-5 border-b border-b-gray-400'>
@@ -39,12 +42,31 @@ const Navbar = () => {
                         <img className='w-8 rounded-full' src={assets.profile_pic} />
                         <img className='w-2.5' src={assets.dropdown_icon} />
                         <div className='absolute top-0 right-0 pt-14 text-base font-medium text-gray-600 z-20 hidden group-hover:block'>
-                            <div className='min-w-48 bg-stone-100 rounded flex flex-col gap-4 p-4'>
-                                <p  onClick={ () => naviagte('/my-profile')} className='hover:text-black cursor-pointer'> My Profile </p>
-                                <p  onClick={ () => naviagte('/my-appointments')} className='hover:text-black cursor-pointer'> My Appointments </p>
-                                <p  onClick={ () => setToken(false) } className='hover:text-black cursor-pointer'> Logout </p>
-                            </div>
-                        </div>
+            <div className='min-w-48 bg-stone-100 rounded flex flex-col gap-4 p-4'>
+                <p 
+                    onClick={() => navigate('/my-profile')} 
+                    className={`px-4 py-2 rounded-full inline-block cursor-pointer hover:bg-gray-600 hover:text-white ${
+                        location.pathname === '/my-profile' ? 'bg-black text-white' : 'hover:bg-black hover:text-white'
+                    }`}
+                >
+                    My Profile
+                </p>
+                <p  
+                    onClick={() => navigate('/my-appointments')} 
+                    className={`cursor-pointer px-4 py-2 rounded-full inline-block hover:bg-gray-600 hover:text-white ${
+                        location.pathname === '/my-appointments' ? 'bg-black text-white' : 'hover:text-black'
+                    }`}
+                >
+                    My Appointments
+                </p>
+                <p 
+                    onClick={() => setToken(false)} 
+                    className='hover:bg-red-800 hover:text-white cursor-pointer px-4 py-2 rounded-full inline-block'
+                >
+                    Logout
+                </p>
+            </div>
+        </div>
                     </div>
                     :
                     <button onClick={ () => naviagte('/login')} className='bg-primary text-white px-8 py-3 rounded-full font-light hidden md:block font-bold'> Create account</button>
