@@ -17,19 +17,19 @@ const addDoctor = async (req, res) => {
         // checking for all data to add doctors 
         if( !name || !email || !password || !speciality || !degree || !experience || !about || !fees || !address  )
         {
-            return res.status(400).json({ success:false, message: "All fields are required" })
+            return res.status(200).json({ success:false, message: "All fields are required" })
         }
 
         // validating email format 
         if( !validator.isEmail( email ))
         {
-            return res.status(400).json({ success:false, message: "Invalid email format" })
+            return res.status(200).json({ success:false, message: "Invalid email format" })
         }
 
         // validating password length
         if( password.length < 6 )
         {
-            return res.status(400).json({ success:false, message: "Password must be atleast 6 characters" })
+            return res.status(200).json({ success:false, message: "Password must be atleast 6 characters" })
         }
 
         // hashing doctor password 
@@ -93,7 +93,7 @@ const loginAdmin = async (req, res) => {
         }
         else 
         {
-            return res.status(400).json({ success:false, message: "Invalid credentials" })
+            return res.status(200).json({ success:false, message: "Invalid credentials" })
         }
 
     }
@@ -104,4 +104,20 @@ const loginAdmin = async (req, res) => {
 
 }
 
-export { addDoctor, loginAdmin}
+// API to get all doctors list for admin pannel 
+const allDoctors = async (req, res) => {
+
+    try
+    {
+        const doctors = await doctorModel.find({}).select('-password')
+        // getting all the doctor data skipping the password from the data 
+        res.status(200).json({ success:true, doctors })
+    }
+    catch (error)
+    {
+        console.log( error )
+        res.status(500).josn({ success: false, message: error.message})
+    }
+}
+
+export { addDoctor, loginAdmin, allDoctors }

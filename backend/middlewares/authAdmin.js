@@ -14,7 +14,7 @@ const authAdmin = async(req, res, next) => {
 
         if( !atoken )
         {
-            return res.status(400).json({msg: "Invalid Authentication", success: false})
+            return res.status(200).json({msg: "Invalid Authentication", success: false})
         }
 
         // decrypt the token
@@ -22,7 +22,7 @@ const authAdmin = async(req, res, next) => {
 
         if( token_decode !== process.env.ADMIN_EMAIL + process.env.ADMIN_PASSWORD )
         {
-            return res.status(400).json({msg: "Invalid Authentication Login Again", success: false})
+            return res.status(200).json({msg: "Invalid Authentication Login Again", success: false})
         }
 
         next(); // Call the next middleware or api function
