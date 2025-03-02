@@ -4,6 +4,8 @@ import 'dotenv/config'
 import connectDB from './config/mongodb.js'
 import connectCloudinary from './config/cloudinary.js'
 import adminRouter from './routes/adminRoute.js'
+import doctorRouter from './routes/doctorRoutes.js'
+import userRouter from './routes/userRoutes.js'
 
 
 // app config 
@@ -23,6 +25,11 @@ app.use(cors()) // esaily connect frontend app with backend app
 
 app.use('/api/admin', adminRouter) 
 // localhost:4000/api/admin/add-doctor
+
+app.use('/api/doctor', doctorRouter)
+
+// User routes 
+app.use('/api/user', userRouter)
 
 app.get( '/', (req, res) => {
     res.status(200).send('API IS RUNNING MOHIT KHANDELWAL')

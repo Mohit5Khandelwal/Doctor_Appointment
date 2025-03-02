@@ -23,9 +23,9 @@ const AdminContextProvider = (props) => {
             {
                 setDoctors(data.doctors)
                 console.log( data.doctors);
-                toast.success( 'Doctors Data fetched successfully', {
-                    position: "top-center"
-                } )
+                // toast.success( 'Doctors Data fetched successfully', {
+                //     position: "top-center"
+                // } )
             }
             else 
             {
@@ -40,6 +40,30 @@ const AdminContextProvider = (props) => {
 
     }
 
+    const changeAvailability = async (docId) => {
+
+        try
+        {
+            const { data } = await axios.post( backendUrl + '/api/admin/change-availability', {docId},  { headers: { aToken}})
+
+            if( data.success )
+            {
+                toast.success( data.message )
+                // Updating the doctor data 
+                getAllDoctors()
+            }
+            else 
+            {
+                toast.error( data.message )
+            }
+        }
+        catch (error)
+        {
+            console.log( error )
+            toast.error( error.message )
+        }
+    }
+
     // Calling this Doctors fetch function on All Doctors page
 
     const value = {
@@ -47,7 +71,8 @@ const AdminContextProvider = (props) => {
         setAToken,
         backendUrl,
         getAllDoctors,
-        doctors
+        doctors,
+        changeAvailability
 
     }
 

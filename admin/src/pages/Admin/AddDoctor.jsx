@@ -111,7 +111,7 @@ const AddDoctor = () => {
     
 
       {/* Form to add doctor in our database */}
-        <div className="bg-stone-300 px-8 py-9 border rounded w-full max-w-5xl max-h-[80vh] overflow-y-scroll">
+        <div className="bg-indigo-100 px-8 py-9 border rounded w-full max-w-5xl max-h-[80vh] overflow-y-scroll">
 
             
             

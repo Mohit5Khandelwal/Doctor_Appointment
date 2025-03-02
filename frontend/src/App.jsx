@@ -10,11 +10,15 @@ import MyAppointments from './pages/MyAppointments'
 import Appointments from './pages/Appointments'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const App = () => {
     return (
       <div className='mx-4 sm:mx-[10%]'>
+
+        {/* Toast message */}
+        <ToastContainer />
 
         {/* This Bar visible in all pages  */}
         <Navbar />
