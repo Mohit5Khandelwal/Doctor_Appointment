@@ -124,14 +124,12 @@ const AddDoctor = () => {
                 />
             </label>
             <input onChange={ (e) => setDocImg(e.target.files[0])} type="file" id="doc-img" hidden />
-            {
-                !docImg &&
-                
+            
                 <p>
                     
                     Upload doctor <br /> picture
                 </p>
-            }
+            
             </div>
 
             <div className="flex flex-col lg:flex-row items-start gap-10 text-gray-600">

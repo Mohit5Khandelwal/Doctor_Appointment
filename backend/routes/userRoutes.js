@@ -1,5 +1,5 @@
 import express from 'express'
-import { getProfile, loginUser, registerUser, updateProfile } from '../controllers/userController.js'
+import { bookAppointment, getProfile, loginUser, registerUser, updateProfile } from '../controllers/userController.js'
 import authUser from '../middlewares/authUser.js'
 import upload from '../middlewares/multer.js';
 
@@ -20,6 +20,9 @@ userRouter.get('/get-profile', authUser, getProfile)
 userRouter.post( '/update-profile', upload.single('image') , authUser, updateProfile )
 
 // upload image come first  before middleware so that it can pass to middleware 
+
+// API for user to book doctor appointment 
+userRouter.post('/book-appointment', authUser, bookAppointment)
 
 
 export default userRouter
