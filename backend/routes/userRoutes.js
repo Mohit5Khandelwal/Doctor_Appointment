@@ -37,4 +37,6 @@ userRouter.post('/payment-razorpay', authUser, paymentRazorpay)
 // API for user to verify it's payment 
 userRouter.post('/verify-payment', authUser, verifyRazorpay)
 
+// API to fetch all user appointments 
+
 export default userRouter

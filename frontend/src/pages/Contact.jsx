@@ -16,9 +16,9 @@ const Contact = () => {
 
           <div className='flex flex-col justify-center items-center gap-6 ' >
             <p className='font-semibold text-lg text-gray-600' > Our OFFICE </p>
-            <p className='text-gray-500 text-center'> 111/119 Vijay path <br/> Mansarovar, Jaipur, INDIA </p>
-            <p className='text-gray-500 text-center'> Tel: (xxx-xxx-xx) <br /> Email: docConnect@gmail.com </p>
-            <p className='font-semibold text-lg text-gray-600 text-center'> Careers at DocConnect </p>
+            <p className='text-gray-500 text-center'> 209/119 wall street <br/> Bay road, London, UK </p>
+            <p className='text-gray-500 text-center'> Tel: (xxx-xxx-xx) <br /> Email: prescripto@gmail.com </p>
+            <p className='font-semibold text-lg text-gray-600 text-center'> Careers at Prescripto </p>
             <p className='text-gray-500'> Learn more bout teams and job opening </p>
             <Button> Explore Jobs  </Button>
           </div>
