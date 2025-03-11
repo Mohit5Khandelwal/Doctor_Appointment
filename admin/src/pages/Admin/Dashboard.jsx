@@ -39,6 +39,9 @@ const Dashboard = () => {
                 // Update user appointments 
                 await getAllAppointments()
 
+                // update the dashboard data 
+                await getDashboardData()
+
             }
             else 
             {
