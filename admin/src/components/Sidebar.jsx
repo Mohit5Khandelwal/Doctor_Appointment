@@ -19,6 +19,7 @@ const Sidebar = () => {
                     <NavLink className={ ({isActive}) => `flex items-center gap-3 py-3.5 px-3 md:px-9 md:min-w-72 rounded-md cursor-pointer ${isActive ? 'bg-[#F2F3FF] border-r-4 border-primary' : ''}` } to = {'/admin-dashboard'}>
                         <img src={assets.home_icon} alt='' />
                         <p className='md:block hidden'> Dashboard  </p>
+                        <p className='md:hidden block text-white'> T</p>
                     </NavLink>
 
                     <NavLink className={ ({isActive}) => `flex items-center gap-3 py-3.5 px-3 md:px-9 md:min-w-72 rounded-md cursor-pointer ${isActive ? 'bg-[#F2F3FF] border-r-4 border-primary' : ''}` } to = {'/all-appointments'} >
@@ -46,8 +47,9 @@ const Sidebar = () => {
                 dToken && <ul className='text-[#515151] mt-5 px-2 py-3' >
 
                     <NavLink className={ ({isActive}) => `flex items-center gap-3 py-3.5 px-3 md:px-9 md:min-w-72 rounded-md cursor-pointer ${isActive ? 'bg-[#F2F3FF] border-r-4 border-primary' : ''}` } to = {'/doctor-dashboard'}>
-                        <img src={assets.home_icon} alt='' />
+                        <img    src={assets.home_icon} alt='' />
                         <p className='md:block hidden'> Dashboard  </p>
+                        <p className='md:hidden block text-white'> T</p>
                     </NavLink>
 
                     <NavLink className={ ({isActive}) => `flex items-center gap-3 py-3.5 px-3 md:px-9 md:min-w-72 rounded-md cursor-pointer ${isActive ? 'bg-[#F2F3FF] border-r-4 border-primary' : ''}` } to = {'/doctor-appointments'} >

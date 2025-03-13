@@ -89,7 +89,7 @@ const Dashboard = () => {
 
             </div>
 
-            <div className='bg-white'>
+            <div className='bg-white hidden md:block'>
 
                 <div className='flex items-center gap-2.5 px-4 py-4 mt-10 rounded-t border bg-gray-100'>
                     <img src={assets.list_icon} alt='' />

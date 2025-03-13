@@ -60,7 +60,7 @@ const AllApointments = () => {
 
             <div className='bg-white border rounded text-sm max-h-[80vh] min-h-[60vh] overflow-y-scroll '>
 
-                <div className='hidden sm:grid grid-cols-[0.5fr_3fr_1fr_3fr_3fr_1fr_1fr] grid-flow-cols py-3 px-6 border-b'>
+                <div className='max-sm:hidden sm:grid grid-cols-[0.5fr_3fr_1fr_3fr_3fr_1fr_1fr] grid-flow-cols py-3 px-6 border-b'>
 
                     <p>#</p>
                     <p>Patient</p>
@@ -75,18 +75,18 @@ const AllApointments = () => {
                 {
                     appointments.length > 0 && appointments?.map( (item, index) => (
 
-                        <div className='flex flex-wrap justify-between max-sm:gap-2 sm:grid sm:grid-cols-[0.5fr_3fr_1fr_3fr_3fr_1fr_1fr] items-center text-gray-500 py-3 px-6 border-b hover:bg-gray-300 hover:text-black hover:font-bold' key={index}>
+                        <div className='flex flex-wrap justify-between max-sm:gap-2 sm:grid grid-cols-[0.5fr_3fr_1fr_3fr_3fr_1fr_1fr] items-center text-gray-500 py-3 px-6 border-b hover:bg-gray-100 hover:text-black hover:font-bold' key={index}>
                             <p className='max-sm:hidden'> {index + 1 } </p>
 
-                            <div className=' flex items-center gap-2'>
-                                <img className='lg:w-10 md:w-8 rounded-full bg-gray-200' src={ item.userData.image } alt='' /> <p> { item.userData.name} </p>
+                            <div className=' flex items-center gap-2 '>
+                                <img className='md:w-8 max-sm:hidden  rounded-full sm:w-2 bg-gray-200' src={ item.userData.image } alt='' /> <p> { item.userData.name} </p>
                             </div>
 
                             <p className='max-sm:hidden'> { calculateAge( item.userData.dob )} </p>
 
-                            <p> { slotDateFormat(  item.slotDate )} , {item.slotTime} </p>
+                            <p className='max-sm:hidden'> { slotDateFormat(  item.slotDate )} , {item.slotTime} </p>
 
-                            <div className=' flex items-center gap-2'>
+                            <div className=' flex items-center gap-2 max-sm:hidden'>
                                 <img className='lg:w-10 md:w-8 rounded-full bg-gray-200' src={ item.docData.image } alt='' /> <p> { item.docData.name} </p>
                             </div>
 
@@ -94,7 +94,7 @@ const AllApointments = () => {
                             {
                                 item.cancelled 
                                 ?
-                                <p className='text-white text-md font-sm bg-red-600 border-2 border-red-900 p-3 rounded-full'> Cancelled  </p>
+                                <p className='text-white md:text-md sm:text-sm bg-red-600 border-2 border-red-900 p-3 rounded-full'> Cancelled  </p>
                                 :
                                 <img onClick={ () => cancelAppointment( item._id, item.userData._id ) } src={assets.cancel_icon} />
                             }
