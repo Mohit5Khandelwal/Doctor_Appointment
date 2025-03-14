@@ -73,7 +73,7 @@ const AllApointments = () => {
                 </div>
 
                 {
-                    appointments.length > 0 && appointments?.map( (item, index) => (
+                    appointments.length > 0 && appointments.reverse().map( (item, index) => (
 
                         <div className='flex flex-wrap justify-between max-sm:gap-2 sm:grid grid-cols-[0.5fr_3fr_1fr_3fr_3fr_1fr_1fr] items-center text-gray-500 py-3 px-6 border-b hover:bg-gray-100 hover:text-black hover:font-bold' key={index}>
                             <p className='max-sm:hidden'> {index + 1 } </p>
@@ -94,7 +94,11 @@ const AllApointments = () => {
                             {
                                 item.cancelled 
                                 ?
-                                <p className='text-white md:text-md sm:text-sm bg-red-600 border-2 border-red-900 p-3 rounded-full'> Cancelled  </p>
+                                <p className='w-10 p-3 rounded-full text-lg' > ❌  </p>
+                                :
+                                item.isCompleted 
+                                ? 
+                                <p className='w-10 p-3 rounded-full text-xl' > ✔️</p>
                                 :
                                 <img onClick={ () => cancelAppointment( item._id, item.userData._id ) } src={assets.cancel_icon} />
                             }

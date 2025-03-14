@@ -1,5 +1,5 @@
 import express from 'express'
-import { appointmentCancel, appointmentComplete, appointmentsDoctor, doctorDashboard, doctorList, getDoctorProfile, loginDoctor } from '../controllers/doctorController.js'
+import { appointmentCancel, appointmentComplete, appointmentsDoctor, doctorDashboard, doctorList, getDoctorProfile, loginDoctor, updateDoctorProfile } from '../controllers/doctorController.js'
 import authDoctor from '../middlewares/authDoctor.js';
 
 const doctorRouter = express.Router()
@@ -24,6 +24,10 @@ doctorRouter.get( '/dashData', authDoctor, doctorDashboard );
 
 // API to get user profile 
 doctorRouter.get( '/doctorProfile', authDoctor, getDoctorProfile );
+
+// API to update doctor profile 
+doctorRouter.post( '/updateProfile', authDoctor, updateDoctorProfile );
+
 
 
 

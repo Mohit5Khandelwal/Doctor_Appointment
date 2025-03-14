@@ -60,8 +60,9 @@ const Doctors = () => {
                   <div className='p-4'>
                       <div className='flex items-center gap-2 text-sm text-center text-green-500'>
 
-                              <p className='w-2 h-2 bg-green-500 rounded-full'></p>
-                              <p> Available  </p>
+                          <p className={`w-2 h-2 ${ item.available ? 'bg-green-500' : 'bg-red-500'}  rounded-full`}></p>
+                          { item.available && <p className='text-green-500'> Available  </p> }
+                          { !item.available && <p className='text-red-500'> Not Available  </p> }
                           
                       </div>
                       <p className='text-gray-900 text-lg font-medium' > {item.name} </p>

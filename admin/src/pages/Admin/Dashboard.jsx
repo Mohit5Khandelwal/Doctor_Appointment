@@ -111,7 +111,7 @@ const Dashboard = () => {
                                 {
                                     item.cancelled 
                                     ?
-                                    <p className='text-white text-sm font-medium bg-red-600 border hover:border-white hover:bg-red-400 border-red-400 p-3 rounded-full'> Cancelled  </p>
+                                    <p className='text-white text-lg font-medium  p-3 rounded-full'> ❌  </p>
                                     :
                                     <img onClick={ () => cancelAppointment( item._id, item.userData._id ) } src={assets.cancel_icon} />
                                 }

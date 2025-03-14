@@ -179,10 +179,11 @@ const MyAppointments = () => {
                             </div>
 
                             <div className='flex flex-col gap-2 justify-center'>
-                                { !item.cancelled && item.payment && <Button  className='text-white border bg-green-700  border-green-600  hover:bg-green-500' > Online Payment Successful   </Button> }
-                                { !item.cancelled && !item.payment && <Button onClick={ () => paymentRazorpay( item._id ) } > Pay Online </Button> }
-                                { !item.cancelled && !item.payment && <Button variant='destructive' onClick = { () => cancelAppointment(item._id) } > Cancel Appointment  </Button> }
-                                { item.cancelled && <Button variant='outline' className='text-white bg-red-700 hover:bg-red-400 hover:text-white border border-red-600 ' > Appointment Cancelled  </Button> }
+                                { !item.cancelled && item.payment && !item.isCompleted  && <Button  className='text-white border bg-green-700  border-green-600  hover:bg-green-500' > Online Payment Successful   </Button> }
+                                { !item.cancelled && !item.payment && !item.isCompleted  && <Button onClick={ () => paymentRazorpay( item._id ) } > Pay Online </Button> }
+                                { !item.cancelled && !item.payment && !item.isCompleted  && <Button variant='destructive' onClick = { () => cancelAppointment(item._id) } > Cancel Appointment  </Button> }
+                                { item.cancelled &&  !item.isCompleted  && <Button variant='outline' className='text-white bg-red-700 hover:bg-red-400 hover:text-white border border-red-600 ' > Appointment Cancelled  </Button> }
+                                { item.isCompleted  && <Button  className='text-white border bg-green-700  border-green-600  hover:bg-green-500' > Appointment Completed   </Button> }
                             </div>
 
 

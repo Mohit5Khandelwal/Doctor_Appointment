@@ -127,7 +127,7 @@ const DoctorDashboard = () => {
                                     {
                                         item.cancelled 
                                         ?
-                                            <p>  ❌  </p>
+                                            <p className='text-xl'>  ❌  </p>
                                             :
                                             item.isCompleted 
                                                 ?
