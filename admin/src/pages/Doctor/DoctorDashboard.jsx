@@ -78,7 +78,7 @@ const DoctorDashboard = () => {
 
             <div className='flex flex-wrap gap-4'>
 
-                <div className='flex  items-center gap-2 bg-white p-4 sm:p-2 min-w-52 rounded border-2 border-blue-300 hover:border-blue-600 cursor-pointer hover:scale-105 transition-all duration-300 hover:bg-gray-200'>
+                <div className='flex  items-center gap-2 bg-white p-4 sm:p-2 min-w-52 rounded border-2 border-blue-300 hover:border-blue-600 cursor-pointer hover:scale-105 transition-all duration-300 hover:bg-blue-100'>
                     <img className='w-14' src={ assets.earning_icon} alt='' />
                     <div>
                         <p className='text-xl font-bold text-gray-700'> ₹ {dashData.earning} </p>
@@ -86,7 +86,7 @@ const DoctorDashboard = () => {
                     </div>
                 </div>
 
-                <div className='flex items-center gap-2 bg-white p-4 min-w-52 rounded border-2 border-blue-300 hover:border-blue-600  cursor-pointer hover:scale-105 transition-all duration-300 hover:bg-gray-200'>
+                <div className='flex items-center gap-2 bg-white p-4 min-w-52 rounded border-2 border-blue-300 hover:border-blue-600  cursor-pointer hover:scale-105 transition-all duration-300 hover:bg-blue-100'>
                     <img className='w-14' src={ assets.appointments_icon} alt='' />
                     <div>
                         <p className='text-xl font-bold text-gray-700'> {dashData.appointment} </p>
@@ -94,7 +94,7 @@ const DoctorDashboard = () => {
                     </div>
                 </div>
 
-                <div className='flex items-center gap-2 bg-white p-4 min-w-52 rounded border-2 border-blue-300 hover:border-blue-600  cursor-pointer hover:scale-105 transition-all duration-300 hover:bg-gray-200'>
+                <div className='flex items-center gap-2 bg-white p-4 min-w-52 rounded border-2 border-blue-300 hover:border-blue-600  cursor-pointer hover:scale-105 transition-all duration-300 hover:bg-blue-100'>
                     <img className='w-14' src={ assets.patients_icon} alt='' />
                     <div>
                         <p className='text-xl font-bold text-gray-700'> {dashData.patients} </p>
@@ -117,7 +117,7 @@ const DoctorDashboard = () => {
                         {
                             dashData?.latestAppointments.map( (item, index) => (
 
-                                <div className='flex items-center px-6 py-3 gap-3 hover:bg-gray-200' key={index}>
+                                <div className='flex items-center px-6 py-3 gap-3 hover:bg-blue-100' key={index}>
                                     <img className='rounded-full w-10 bg-gray-300' src={item.userData.image} alt='' />
                                     <div className='flex-1 '>
                                         <p className='text-gray-800 font-medium'> {item.userData.name} </p>

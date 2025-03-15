@@ -62,7 +62,7 @@ const Dashboard = () => {
 
             <div className='flex flex-wrap gap-4'>
 
-                <div className='flex items-center gap-2 bg-white p-4 min-w-52 rounded border-2 border-blue-300 hover:border-blue-600 cursor-pointer hover:scale-105 transition-all duration-300 hover:bg-gray-200'>
+                <div className='flex items-center gap-2 bg-white p-4 min-w-52 rounded border-2 border-blue-300 hover:border-blue-600 cursor-pointer hover:scale-105 transition-all duration-300 hover:bg-blue-700'>
                     <img className='w-14' src={ assets.doctor_icon} alt='' />
                     <div>
                         <p className='text-xl font-bold text-gray-700'> {dashData.doctors} </p>

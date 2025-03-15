@@ -91,7 +91,7 @@ const DoctorProfile = () => {
                     </span>
                     </p>
 
-                    <div className='flex gap-2 py-2'>
+                    <div className='flex gap-2 py-2 sm:hidden md:block'>
                         <p> Address :  </p>
 
                         <p className='text-sm'>
