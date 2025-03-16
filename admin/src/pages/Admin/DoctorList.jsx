@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { AdminContext } from '../../context/AdminContext'
+import { BounceLoader, DotLoader, FadeLoader, PulseLoader, RingLoader, RiseLoader } from 'react-spinners'
 
 const DoctorList = () => {
 
@@ -19,6 +20,7 @@ const DoctorList = () => {
         <div className='m-5 max-h-[90vh] overflow-y-scroll'>
             <h1 className='text-lg font-medium'> All Doctors </h1>
             <div className='w-full flex flex-wrap gap-4 pt-5 gap-y-6'>
+
                 {
                     doctors?.map( (item, index) => (
                         <div className='border border-indigo-200 rounded-xl max-w-56 overflow-hidden cursor-pointer group' key={index}>
@@ -35,6 +37,17 @@ const DoctorList = () => {
                         </div>
                     ))
                 }
+
+                { !doctors &&   (
+                                    <div className="flex justify-center mx-auto my-10 ">
+                                        <PulseLoader loading={ true } color="olive" size={40} />
+                                    </div> 
+                                )
+                }
+
+
+
+
             </div>
         </div>
     )

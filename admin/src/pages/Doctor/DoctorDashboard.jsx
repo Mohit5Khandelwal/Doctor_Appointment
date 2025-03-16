@@ -4,6 +4,7 @@ import { assets } from '../../assets/assets'
 import { AppContext } from '../../context/AppContext'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { BounceLoader, CircleLoader, ClimbingBoxLoader, ClipLoader, ClockLoader, MoonLoader, PacmanLoader, PuffLoader, RiseLoader, RotateLoader, SyncLoader } from 'react-spinners'
 
 const DoctorDashboard = () => {
 
@@ -71,7 +72,11 @@ const DoctorDashboard = () => {
         }
     }
 
-    return dashData && (
+    
+    return !dashData ?   <div className="flex justify-center mx-auto my-10 h-screen">
+                            <PuffLoader loading={ true } color="blue" size={150} />
+                        </div> : 
+            (
 
 
         <div className='md:m-5 m-3'>
@@ -145,8 +150,14 @@ const DoctorDashboard = () => {
                             ))
                         }
 
+                        {/* <PuffLoader loading={true}  color='blue' size={150}/>
+                        <MoonLoader loading={true}  color='blue' size={150}/> */}
+                       
+
                     </div>
                 </div>
+
+        
         
         </div>
     )

@@ -4,6 +4,7 @@ import { AppContext } from '../../context/AppContext'
 import { assets } from '../../assets/assets'
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { RingLoader } from 'react-spinners';
 
 const AllApointments = () => {
 
@@ -107,6 +108,12 @@ const AllApointments = () => {
 
                         
                     ) )
+                }
+
+                { appointments.length == 0 && (
+                                    <div className="flex justify-center mx-auto my-10 ">
+                                        <RingLoader loading={ true } color="blue" size={120} />
+                                    </div> )
                 }
 
             </div>

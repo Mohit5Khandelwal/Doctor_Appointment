@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { DoctorContext } from '../../context/DoctorContext'
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { ClockLoader, MoonLoader, PuffLoader } from 'react-spinners';
 
 const DoctorProfile = () => {
 
@@ -47,7 +48,9 @@ const DoctorProfile = () => {
         }
     }
 
-    return doctorData && (
+    return !doctorData ?   <div className="flex justify-center mx-auto my-10 h-screen">
+                        <PuffLoader loading={ true } color="blue" size={150} />
+                        </div> :  (
 
 
         <div>

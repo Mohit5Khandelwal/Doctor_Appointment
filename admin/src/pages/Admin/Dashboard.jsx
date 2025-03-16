@@ -4,6 +4,7 @@ import { assets } from '../../assets/assets'
 import { AppContext } from '../../context/AppContext'
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { PuffLoader } from 'react-spinners';
 
 
 
@@ -57,7 +58,9 @@ const Dashboard = () => {
     }
 
 
-    return dashData && (
+    return !dashData ?   <div className="flex justify-center mx-auto my-10 h-screen">
+                                <PuffLoader loading={ true } color="blue" size={150} />
+                            </div> :  (
         <div className='m-5'>
 
             <div className='flex flex-wrap gap-4'>

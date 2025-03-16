@@ -4,6 +4,7 @@ import { assets } from '../../assets/assets'
 import { toast } from 'react-toastify';
 import { AppContext } from '../../context/AppContext';
 import axios from 'axios';
+import { GridLoader, PropagateLoader, PuffLoader, RingLoader } from 'react-spinners';
 
 const DoctorAppointments = () => {
 
@@ -137,6 +138,14 @@ const DoctorAppointments = () => {
                         </div>
                     ))
                 }
+                
+                { appointments.length == 0 && (
+                    <div className="flex justify-center mx-auto my-10 ">
+                        <RingLoader loading={ true } color="blue" size={120} />
+                    </div> )
+                }
+            
+                
             </div>
 
         </div>
