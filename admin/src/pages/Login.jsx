@@ -4,6 +4,7 @@ import { AdminContext } from '../context/AdminContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { DoctorContext } from '../context/DoctorContext';
+import { RingLoader } from 'react-spinners';
 
 const Login = () => {
 
@@ -12,6 +13,7 @@ const Login = () => {
     const {setAToken, backendUrl} = useContext(AdminContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const { setDToken } = useContext( DoctorContext )
 
@@ -22,6 +24,8 @@ const Login = () => {
         event.preventDefault();
 
         console.log( email );
+
+        setLoading( true );
 
         try 
         {
@@ -39,10 +43,12 @@ const Login = () => {
                     localStorage.setItem('aToken', data.token);
                     console.log( data.token );
                     toast.success( data.message )
+                    setLoading( false );
                 }
                 else 
                 {
                     toast.error( data.message )
+                    setLoading( false );
                 }
                 
             }
@@ -60,10 +66,12 @@ const Login = () => {
                         localStorage.setItem('dToken', data.token);
                         console.log( data.token );
                         toast.success( data.message )
+                        setLoading( false );
                     }
                     else 
                     {
                         toast.error( data.message )
+                        setLoading( false );
                     }
             }
         }
@@ -71,6 +79,7 @@ const Login = () => {
         {
             console.log(error);
             toast.error( error.message )
+            setLoading( false );
         }
 
     }
@@ -97,11 +106,16 @@ const Login = () => {
                 <button className='bg-blue-600 text-white w-full py-2 rounded-md text-base mt-4' type='submit' > Login </button>
 
                 {
-                    state === 'Admin'
+                    state === 'Admin' && !loading
                     ?
                     <p className='text-white font-bold '> Doctor Login ? <span className='underline text-blue-400 cursor-pointer' onClick={  () => setState('Doctor') } > Click here </span> </p>
                     :
                     <p className='text-white font-bold '> Admin Login ? <span className='underline text-blue-400 cursor-pointer' onClick={  () => setState('Admin') } > Click here </span> </p>
+                }
+
+                { loading && <div className="flex justify-center mx-auto my-10 ">
+                                        <RingLoader loading={ true } color="gray" size={120} />
+                                    </div>  
                 }
 
             </div>
