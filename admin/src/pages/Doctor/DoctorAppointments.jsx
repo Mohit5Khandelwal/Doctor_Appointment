@@ -97,7 +97,7 @@ const DoctorAppointments = () => {
                 {
                     appointments.length > 0 && appointments.reverse().map( (item, index) => (
 
-                        <div className='flex flex-wrap justify-between max-sm:gap-5 max-sm:text-base sm:grid grid-cols-[0.5fr_2fr_1fr_1fr_3fr_1fr_1fr] gap-1 items-center text-gray-700 py-3 px-6 border-b-2 border-b-gray-700 hover:font-bold hover:bg-gray-100' key={index}>
+                        <div className='flex flex-wrap justify-between max-sm:gap-5 max-sm:text-base sm:grid grid-cols-[0.5fr_2fr_1fr_1fr_3fr_1fr_1fr] gap-1 items-center text-gray-700 py-3 px-6 border-b-2 border-b-gray-700 hover:font-bold hover:bg-blue-100' key={index}>
 
                             <p className='max-sm:hidden'> {index + 1 } </p>
 

@@ -75,7 +75,7 @@ const AllApointments = () => {
                 {
                     appointments.length > 0 && appointments.reverse().map( (item, index) => (
 
-                        <div className='flex flex-wrap justify-between max-sm:gap-2 sm:grid grid-cols-[0.5fr_3fr_1fr_3fr_3fr_1fr_1fr] items-center text-gray-500 py-3 px-6 border-b hover:bg-gray-100 hover:text-black hover:font-bold' key={index}>
+                        <div className='flex flex-wrap justify-between max-sm:gap-2 sm:grid grid-cols-[0.5fr_3fr_1fr_3fr_3fr_1fr_1fr] items-center text-gray-500 py-3 px-6 border-b hover:bg-blue-100 hover:text-black hover:font-bold' key={index}>
                             <p className='max-sm:hidden'> {index + 1 } </p>
 
                             <div className=' flex items-center gap-2 '>

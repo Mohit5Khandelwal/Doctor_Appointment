@@ -133,14 +133,9 @@ const appointmentsAdmin = async (req, res) => {
         {
             return res.status(200).json({ success:false, message: "No appointments found" })
         }
-        else 
-        {
-            let appointmentListData  = appointmentList.reverse()
-            res.status(200).json({ success: true, appointmentListData });
 
-        }
+        res.status(200).json({ success: true, appointmentList });
 
-        
     }
     catch (error) {
 
