@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 // import { doctors } from '../assets/assets_frontend/assets'
 import { useNavigate } from 'react-router-dom'
 import { AppContext } from '../context/AppContext';
+import { GridLoader, PropagateLoader, PuffLoader, RingLoader } from 'react-spinners';
 
 const TopDoctors = () => {
 
@@ -15,8 +16,9 @@ const TopDoctors = () => {
 
             {/* Doctors List  */}
             <div className='w-full grid grid-cols-auto gap-4 pt-5 gap-y-6 px-3 sm:px-0'>
+
                 {
-                    doctors.slice(0, 10).map( (item, index) => (
+                    doctors &&  doctors.slice(0, 10).map( (item, index) => (
 
                         <div onClick={ () => { naviagte(`/appointment/${item._id}`); scrollTo(0,0) }} className='border border-blue-200 rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-10px] transition-all duration-500' key={index}>
 
@@ -40,6 +42,14 @@ const TopDoctors = () => {
 
                     ))
                 }
+
+                { !doctors && (
+                                    <div className="flex justify-center mx-auto my-10 ">
+                                        <RingLoader loading={ true } color="blue" size={120} />
+                                    </div> )
+                }
+
+
             </div>
 
                 <button onClick={ () => { naviagte('/doctors'); scrollTo(0, 0); } } className='bg-blue-50 text-gray-600 px-12 py-3 mt-7 rounded-full mx-10 font-bold'>

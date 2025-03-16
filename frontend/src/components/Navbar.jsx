@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { assets } from '../assets/assets_frontend/assets';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
+import { Button } from './ui/button';
 
 const Navbar = () => {
 
@@ -43,6 +44,11 @@ const Navbar = () => {
                     <li className='py-1'> Contact </li>
                     <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
                 </NavLink>
+                { <a href='https://doctor-appointment-admin-wp1n.onrender.com/login'>
+                <p className="border px-2.5 py-0.5 rounded-full border-blue-500 text-gray-600 font-bold animate-pulse">
+                    Admin/Doctor Login
+                </p>
+                </a> }
             </ul>
             <div className='flex items-center gap-4'>
 
@@ -98,8 +104,14 @@ const Navbar = () => {
                         <NavLink onClick={ () => setShowMenu(false) } to='/doctors'> <p className='px-4 py-2 rounded full inline-block'> All Doctors </p></NavLink>
                         <NavLink onClick={ () => setShowMenu(false) } to='/about'> <p className='px-4 py-2 rounded full inline-block' > About </p> </NavLink>
                         <NavLink onClick={ () => setShowMenu(false) } to='/contact'> <p className='px-4 py-2 rounded full inline-block' > Contact </p> </NavLink>
+                        <a href='https://doctor-appointment-admin-wp1n.onrender.com/login'>
+                            <p className="border px-2.5 py-0.5 rounded-full border-blue-500 text-gray-600 font-bold animate-pulse">
+                                Admin/Doctor Login
+                            </p>
+                        </a>
                     </ul>
 
+                    
 
                 </div>
 

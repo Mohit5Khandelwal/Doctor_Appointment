@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext';
+import { GridLoader, PropagateLoader, PuffLoader, RingLoader } from 'react-spinners';
 
 const Doctors = () => {
 
@@ -32,7 +33,9 @@ const Doctors = () => {
     applyFilter();
   }, [ doctors, speciality]);
 
-  return (
+  return !doctors ? <div className="flex justify-center mx-auto my-10 ">
+                    <RingLoader loading={ true } color="blue" size={120} />
+                  </div> : (
 
     <div>
       <p className='text-gray-600'> Browse through the doctors specialist.</p>

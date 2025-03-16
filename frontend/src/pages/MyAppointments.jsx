@@ -4,6 +4,7 @@ import { Button } from '../components/ui/button';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom'
+import { GridLoader, PropagateLoader, PuffLoader, RingLoader } from 'react-spinners';
 
 const MyAppointments = () => {
 
@@ -156,8 +157,8 @@ const MyAppointments = () => {
 
             <p className='pb-3 mt-12 font-medium text-zinc-700 border-b'> My Appointments </p>
             <div>
-                {
-                    appointments.map( (item, index) => (
+                { 
+                    appointments && appointments.map( (item, index) => (
 
                             <div className='grid grid-cols-[1fr_2fr] gap-4 sm:flex sm:gap-6 py-2 border-b'  key={index}>
 
@@ -191,6 +192,16 @@ const MyAppointments = () => {
 
                     ))
                 }
+
+                {  !appointments && 
+                    <div className="flex justify-center mx-auto my-10 ">
+                    <RingLoader loading={ true } color="blue" size={120} />
+                    </div>
+                }
+
+        
+
+
             </div>
         
         </div>
